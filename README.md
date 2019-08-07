@@ -1,6 +1,8 @@
 
 # Stealthwatch CSV Tools
-Tools used to for converting CSV data into Stealthwatch XML configuration data, and vice versa.
+Tools used to for converting CSV data into Stealthwatch XML configuration data, and vice versa. Currently, the following capabilities are available:
+* [csv-to-subtree-xml](csv-to-subtree-xml)
+* xml-to-csv (coming soon...)
 
 ### Requirements
 * Python (version 3.0+)
