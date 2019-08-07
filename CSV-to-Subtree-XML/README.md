@@ -106,7 +106,7 @@ Before running the script, please ensure the configuration file `csv-to-subtree-
 No known issues.
 
 ### Getting help
-Use this project at your own risk (support not provided). *If you need technical support with Cisco Stealthwatch APIs, do one of the following:*
+Use this project at your own risk (support not provided). *If you need technical support with Cisco Stealthwatch, do one of the following:*
 
 * Browse the Forum
     * Check out our [forum](https://community.cisco.com/t5/custom/page/page-id/customFilteredByMultiLabel?board=j-disc-dev-security&labels=stealthwatch) to pose a question or to see if any questions have already been answered by our community. We monitor these forums on a best effort basis and will periodically post answers. 
