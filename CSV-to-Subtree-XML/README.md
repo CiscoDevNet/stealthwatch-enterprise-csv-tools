@@ -85,7 +85,7 @@ Before running the script, please ensure the configuration file `csv-to-subtree-
             * Download Python at: https://www.python.org/downloads/
 3. Navigate to the `csv-to-subtree-xml` directory where you saved and unzip the original zip file
     * run the command: `cd <your-csv-to-subtree-xml-directory>`
-4. If necessary, edit the config file: `config.json`
+4. If necessary, edit the config file: `csv-to-subtree-xml.conf`
     * <sub>NOTE: ensure you have selected \[inside-hosts\] or \[outside-hosts\] as your desired import location</sub>
 5. Run the `csv-to-subtree-xml.py` script (with the CSV file's path as an argument) to generate your XML file
     * if you are in `<your-csv-to-subtree-xml-directory>` then you can run:
