@@ -4,9 +4,8 @@ This bundle allows you to convert a CSV file with Host Group information into an
 
 ### Requirements
 * Python (version 3.0+)
-* Python Requ
+* Python `Requests` Module
 
-### Installation
 ## Installation
 1. Ensure Python 3 is installed.
    * To download and install Python 3, please visit https://www.python.org.
@@ -80,6 +79,6 @@ Use this project at your own risk (support not provided). *If you need technical
     * For worldwide support numbers: www.cisco.com/en/US/partner/support/tsd_cisco_worldwide_contacts.html
 
 ## Licensing info
-This code is licensed under the BSD 3-Clause License. See [LICENSE](../LICENSE) for details. 
+This code is licensed under the BSD 3-Clause License. See [LICENSE](../../../LICENSE) for details. 
 
 
