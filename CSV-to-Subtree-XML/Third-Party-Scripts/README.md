@@ -2,6 +2,12 @@
 # Third Party Scripts
 This folder contains scripts that allows a user to pull data in from various Cisco and 3rd-party sources for conversion into Stealthwatch Enterprise host groups. 
 
+Scripts are currently available to fetch data from the following sources:
+* CyberVision
+* [Talos IP Blacklist](https://github.com/CiscoSE/TalosBlacklistImporter)
+* [Office 365](https://github.com/CiscoSE/Office365Importer)
+* Public ASNs (coming soon...)
+
 ### Getting help
 Use this project at your own risk (support not provided). *If you need technical support with Cisco Stealthwatch, do one of the following:*
 
