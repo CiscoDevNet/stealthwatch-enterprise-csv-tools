@@ -1,56 +1,19 @@
 
-# CSV-to-Subtree-XML
+# get-cybervision-groups
 This bundle allows you to convert a CSV file with Host Group information into an XML file that you can import into StealthWatch as a Host Group Sub-Tree.
 
 ### Requirements
 * Python (version 3.0+)
-* a CSV file in the expected format
+* Python Requ
 
 ### Installation
+## Installation
 1. Ensure Python 3 is installed.
    * To download and install Python 3, please visit https://www.python.org.
-2. Download the `.py` files located in this directory.
+2. Ensure the Python `requests` module is installed.
+   * For more information on the Python `requests` module, please visit https://pypi.org/project/requests/.
+3. Download the `.py` files located in this directory.
     * <sub>Alternatively, advanced users can also use git to checkout / clone this project.</sub>
-
-### CSV File Format
-The CSV file should be formatted as follows:
-
-```
-"<IP-Addresses-or-Ranges>","<Host-Group-Path>"
-```
-
-Example CSV File:
-
-```
-"192.168.1.0/24","/HGA Test Group/TestParentA"
-"192.168.2.0/24","/HGA Test Group/TestParentA"
-"192.168.3.0/24","/HGA Test Group/TestParentA"
-"192.168.4.0/24","/HGA Test Group/TestParentA"
-"192.168.5.0/24","/HGA Test Group/TestParentB"
-"192.168.6.0/24","/HGA Test Group/TestParentB"
-"192.168.7.0/24","/HGA Test Group/TestParentB"
-"192.168.8.0/24","/HGA Test Group/TestParentB"
-"192.168.8.0/24,10.10.10.0/24","/HGA Test Group/TestParentC"
-"10.10.2.1,10.10.5.3,10.10.0.0/16","/HGA Test Group/TestParentC%2FD"
-```
-
-<sub>NOTE: If you want to use a "/" or any other special character in your host group name or parent path, please use URL encoding (ex. "/" becomes "%2F").</sub>
-
-<br/>
-
-IP range entries may be in any of the following formats:
-
-```
-"n.n.n.n"
-"n" OR "n.n" OR "n.n.n"
-"n." OR "n.n." OR "n.n.n."
-"n.n.n.n-n.n.n.n" OR " any number of ordinals separated by dash
-"n.n.n.n/n"
-"n/n" OR "n.n/n" OR "n.n.n/n"
-"n./n" OR "n.n./n" OR n.n.n./n"
-"nnnn::/n"
-"nnnn:nnnn::" OR any sub-set of ordinals terminated in "::" or a full IPv6 literal address
-```
 
 ### Configuration File
 Before running the script, please ensure the configuration file `csv-to-subtree-xml.conf` has been modified with the correct settings. The configuration file contains the following parameters:
