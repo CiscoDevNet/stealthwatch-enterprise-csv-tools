@@ -1,6 +1,7 @@
 
 # get-cybervision-groups
-This bundle allows you to convert a CSV file with Host Group information into an XML file that you can import into StealthWatch as a Host Group Sub-Tree.
+The python script 'get_cybervision_groups.py' allows you to fetch the 'Group' objects from Cybervision and convert it into a CSV file that can be used in conjunction with the
+CSV-to-Subtree-XML bundle to create an XML file that you can import into StealthWatch as a Host Group Sub-Tree.
 
 ### Requirements
 * Python (version 3.0+)

@@ -55,6 +55,7 @@ else:
     print('No Config File found. Exiting.')
     sys.exit()
 
+# Extract Token and Server address from config file
 token = config["CONFIGURATION"]["token"]
 server_address = config["CONFIGURATION"]["ServerAddress"]
 
@@ -63,8 +64,9 @@ with requests.Session() as s:
 
     try:
 
+        # Fetch all group objects from Cybervision
         groups_request = s.get(
-            "https://" + server_address + "/api/1.0/group?token=" + token, verify=False)  # Fetch all groups
+            "https://" + server_address + "/api/1.0/group?token=" + token, verify=False)
 
     except requests.exceptions.HTTPError as err:
         print("HTTP Error getting Groups from Cybervision")
@@ -73,6 +75,7 @@ with requests.Session() as s:
 
 groups_list = []
 
+# Parse group['label'] and IP address from object
 for g in groups_request.json():
     if 'label' in g:
         if 'components' in g:
@@ -82,6 +85,7 @@ for g in groups_request.json():
                     ip_address = c['ip']
                     groups_list.append((group_name, ip_address))
 
+# Write the Group name in HG form: IP Address, 'HG Path'
 with open(outputCSVPath, 'w+') as outputF:
     loc_out_writer = csv.writer(outputF)
     for d in groups_list:
