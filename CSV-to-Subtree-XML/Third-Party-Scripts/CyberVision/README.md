@@ -7,6 +7,7 @@ CSV-to-Subtree-XML bundle to create an XML file that you can import into Stealth
 * Python (version 3.0+)
 * Python `Requests` Module
 
+
 ## Installation
 1. Ensure Python 3 is installed.
    * To download and install Python 3, please visit https://www.python.org.
@@ -16,24 +17,12 @@ CSV-to-Subtree-XML bundle to create an XML file that you can import into Stealth
     * <sub>Alternatively, advanced users can also use git to checkout / clone this project.</sub>
 
 ### Configuration File
-Before running the script, please ensure the configuration file `csv-to-subtree-xml.conf` has been modified with the correct settings. The configuration file contains the following parameters:
-* `InsideOrOutsideHosts`
-    * Inside or Outside Hosts: Select either [inside-hosts] or [outside-hosts], depending on where you plan to import the Host Groups
-* `BeginParseAtRow`
-    * Begin parsing the CSV file at the following row
-* `BeginParseAtColumn`
-    * Begin parsing the CSV file at the following column
-* `StartingID`
-    * Begin auto-incrementing HostGroupID from this value (Recommended is 20000)
-* `DEBUG`
-    * Set DEBUG=true to see verbose debugging messages.
-* `ColumnMapping`
-    * Used to map the columns of the CSV file to the expected format
-        * <sub>Example 1: if first column represents IP ranges, and second column represents host group path, then: `ColumnMapping = 0,1`</sub>
-        * <sub>Example 2: if first column represents host group path, and second column represents IP ranges, then: `ColumnMapping = 1,0`</sub>
-* `SkipWithNoErrorOnBogusEntries`
-    * If there is malformed data in the CSV file, set to true to continue the process anyways despite errors 
-        * <sub>(Note: process will still stop if severe error occurs)</sub>
+Before running the script, please ensure the configuration file `cybervision.conf` has been modified with the correct settings. The configuration file contains the following parameters:
+* `token`
+    * This is the authentication token created via the Cybervision Web interface.
+* `serverAddress`
+    * The IP Address of your Cybervision instance.
+
 
 ### Usage
 
@@ -46,24 +35,21 @@ Before running the script, please ensure the configuration file `csv-to-subtree-
         * if a version number is returned, then you already have Python installed
         * if an error is returned, then you need to install Python
             * Download Python at: https://www.python.org/downloads/
-3. Navigate to the `csv-to-subtree-xml` directory where you saved and unzip the original zip file
-    * run the command: `cd <your-csv-to-subtree-xml-directory>`
-4. If necessary, edit the config file: `csv-to-subtree-xml.conf`
-    * <sub>NOTE: ensure you have selected \[inside-hosts\] or \[outside-hosts\] as your desired import location</sub>
-5. Run the `csv-to-subtree-xml.py` script (with the CSV file's path as an argument) to generate your XML file
-    * if you are in `<your-csv-to-subtree-xml-directory>` then you can run:
-        * `python csv-to-subtree-xml.py <csv_file>`
+3. Navigate to the `CyberVision` directory where you saved and unzip the original zip file
+    * run the command: `cd <your-CyberVision-directory>`
+4. If necessary, edit the config file: `cybervision.conf`
+    
+5. Run the `get_cybervision_groups.py` script to generate your CSV file
+    * if you are in `<your-CyberVision-directory>` then you can run:
+        * `python get_cybervision_groups.py <output_csv_file>`
     * if you are no longer in `<your-csv-to-subtree-xml-directory>` then you can run:
-        * `python <your-csv-to-subtree-xml-directory>/csv-to-subtree-xml.py <csv_file>`
+        * `python <our-CyberVision-directory>/get_cybervision_groups.py <output_csv_file>`
     * Examples:
-        * `python csv-to-subtree-xml.py example.csv`
-        * `python /usr/local/csv-to-subtree-xml.py /usr/local/example.csv`
-6. An XML file will now appear in the same directory as your CSV file. To use in StealthWatch:
-    1. Open the SMC Java Client
-    2. Open the Host Group Editor (cntl-e)
-    3. Right-click on the existing host group that you want to import the new host groups into
-        * NOTE: If necessary, please create a new Host Group as a container for the host groups that are about to be imported
-    4. Select `Import Host Group Sub Tree...` and import the newly created XML file
+        * `python get_cybervision_groups.py example.csv`
+        * `python /usr/local/CyberVision/get_cybervision_groups.py /usr/local/CyberVision/example.csv`
+6. A CSV file will be created in the path that you supplied i.e `/usr/local/CyberVision/example.csv`
+    1. This CSV file is in the format for the CSV-to-SubTree-XML to injest.
+    2. Follow the directions to run the csv-to-subtree-xml.py with this CSV file
 
 ### Known issues
 No known issues.
