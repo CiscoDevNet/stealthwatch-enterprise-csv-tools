@@ -2,6 +2,11 @@
 # Stealthwatch Enterprise CSV Tools
 Tools used to for converting CSV data into Stealthwatch Enterprise XML configuration data, and vice versa. Currently, the following capabilities are available:
 * [CSV-to-Subtree-XML](CSV-to-Subtree-XML)
+   * Includes scripts to fetch data from:
+      * [Cisco Cyber Vision](./CSV-to-Subtree-XML/Third-Party-Scripts/CyberVision)
+      * [Talos IP Blacklist](https://github.com/CiscoSE/TalosBlacklistImporter)
+      * [Office 365](https://github.com/CiscoSE/Office365Importer)
+      * Public ASNs (coming soon...)
 * xml-to-csv (coming soon...)
 
 ### Requirements
