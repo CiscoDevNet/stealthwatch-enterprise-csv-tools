@@ -1,6 +1,10 @@
 
 # CSV-to-Subtree-XML
-This bundle allows you to convert a CSV file with Host Group information into an XML file that you can import into StealthWatch as a Host Group Sub-Tree.
+This bundle allows you to convert a CSV file with Host Group information into an XML file that you can import into StealthWatch as a Host Group Sub-Tree. It also allows you to fetch data from the following sources to be converted in Stealthwatch Host Groups:
+* [Cisco Cyber Vision](./Third-Party-Scripts/CyberVision)
+* [Cisco Talos IP Blacklist](https://github.com/CiscoSE/TalosBlacklistImporter)
+* [Microsoft Office 365](https://github.com/CiscoSE/Office365Importer)
+* Public ASNs (coming soon...)
 
 ### Requirements
 * Python (version 3.0+)
